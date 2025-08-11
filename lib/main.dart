@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:vdk_tech/screens/authentication/login.dart';
+import 'package:vdk_tech/ui/pages/home.dart';
 
 void main() => runApp(
   MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: LoginPage(),
+    home: HomePage(),
   )
 );
 
