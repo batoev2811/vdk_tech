@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vdk_tech/ui/pages/authentication/authentication.dart';
 import 'package:vdk_tech/ui/pages/home.dart';
 
 void main() => runApp(
@@ -7,4 +8,3 @@ void main() => runApp(
     home: HomePage(),
   )
 );
-

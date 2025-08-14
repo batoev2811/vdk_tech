@@ -12,6 +12,8 @@ class StepOne extends StatelessWidget{
 }
 
 class StepOneState extends StatefulWidget {
+  const StepOneState({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return _StepOneState();
@@ -22,17 +24,27 @@ class StepOneState extends StatefulWidget {
 class _StepOneState extends State<StepOneState> {
   @override
   Widget build(Object context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Сбор пакета документов',
-              style: TextStyle(
-                fontSize: 30,
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Запрос и выдача техусловий',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w300
+                ),
               ),
-            ),
-            
-          ],
+              SizedBox(height: 30,),
+              Row(
+                children: [
+                  Container(
+                    
+                  )
+                ],
+              ),
+            ],
+      ),
     );
   }
 

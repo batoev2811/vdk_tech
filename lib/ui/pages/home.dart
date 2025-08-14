@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:vdk_tech/ui/pages/steps/step_five.dart';
+import 'package:vdk_tech/ui/pages/steps/step_four.dart';
 import 'package:vdk_tech/ui/pages/steps/step_one.dart';
+import 'package:vdk_tech/ui/pages/steps/step_three.dart';
+import 'package:vdk_tech/ui/pages/steps/step_two.dart';
+import 'package:vdk_tech/ui/widgets/app_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -20,33 +25,38 @@ class HomePageState extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePageState> {
-  int currentStep = 0;
-
+  int _currentStep = 0;
+  int _totalSteps = 5;
 
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final isSmallScreen = screenWidth < 600 ;
-
+    final isSmallScreen = screenWidth < 600;
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 13, 71, 161),
+      appBar: GradientAppBar(
+        title: 'МУП Водоканал',
+        gradientBegin: Colors.blue.shade900,
+        gradientEnd: Colors.blue.shade500,
       ),
       body: Stepper(
         type: isSmallScreen ? StepperType.vertical : StepperType.horizontal,
         steps: getSteps(),
-        currentStep: currentStep,
+        currentStep: _currentStep,
         onStepContinue: () {
-          final isLastStep = currentStep == getSteps().length - 1;
-          if (isLastStep) {
-            
+          if (_currentStep < _totalSteps - 1) {
+            setState(() {
+              _currentStep++;
+            });
           }
-          setState(() => currentStep += 1);
         },
-        onStepCancel: currentStep == 0
-            ? null
-            : () => setState(() => currentStep -= 1),
+        onStepCancel: () {
+          if (_currentStep > 0) {
+            setState(() {
+              _currentStep--;
+            });
+          }
+        },
         controlsBuilder: (context, details) {
           return Container(
             margin: EdgeInsets.only(top: 50),
@@ -77,67 +87,62 @@ class _HomePageState extends State<HomePageState> {
     Step(
       title: Text('Этап 1'),
       content: StepOne(),
-      isActive: currentStep >= 0,
+      isActive: _currentStep >= 0,
       stepStyle: StepStyle(
         connectorColor: Colors.blue.shade400,
-        gradient: LinearGradient(colors: [
-          Colors.blue.shade900,
-          Colors.blue.shade400,
-        ])
+        gradient: LinearGradient(
+          colors: [Colors.blue.shade900, Colors.blue.shade400],
+        ),
       ),
       state: StepState.complete,
     ),
     Step(
-      isActive: currentStep >= 1,
+      isActive: _currentStep >= 1,
       title: Text('Этап 2'),
-      content: Container(),
+      content: StepTwo(),
       stepStyle: StepStyle(
         connectorColor: Colors.blue.shade400,
-        gradient: LinearGradient(colors: [
-          Colors.blue.shade900,
-          Colors.blue.shade400,
-        ])
+        gradient: LinearGradient(
+          colors: [Colors.blue.shade900, Colors.blue.shade400],
+        ),
       ),
-      state: currentStep < 1 ? StepState.disabled : StepState.complete,
+      state: _currentStep < 1 ? StepState.disabled : StepState.complete,
     ),
     Step(
-      isActive: currentStep >= 2,
+      isActive: _currentStep >= 2,
       title: Text('Этап 3'),
-      content: Container(),
+      content: StepThree(),
       stepStyle: StepStyle(
         connectorColor: Colors.blue.shade400,
-        gradient: LinearGradient(colors: [
-          Colors.blue.shade900,
-          Colors.blue.shade400,
-        ])
+        gradient: LinearGradient(
+          colors: [Colors.blue.shade900, Colors.blue.shade400],
+        ),
       ),
-      state: currentStep < 2 ? StepState.disabled : StepState.complete,
+      state: _currentStep < 2 ? StepState.disabled : StepState.complete,
     ),
     Step(
-      isActive: currentStep >= 3,
+      isActive: _currentStep >= 3,
       title: Text('Этап 4'),
-      content: Container(),
+      content: StepFour(),
       stepStyle: StepStyle(
         connectorColor: Colors.blue.shade400,
-        gradient: LinearGradient(colors: [
-          Colors.blue.shade900,
-          Colors.blue.shade400,
-        ])
+        gradient: LinearGradient(
+          colors: [Colors.blue.shade900, Colors.blue.shade400],
+        ),
       ),
-      state: currentStep < 3 ? StepState.disabled : StepState.complete,
+      state: _currentStep < 3 ? StepState.disabled : StepState.complete,
     ),
     Step(
-      isActive: currentStep >= 4,
+      isActive: _currentStep >= 4,
       title: Text('Этап 5'),
-      content: Container(),
+      content: StepFive(),
       stepStyle: StepStyle(
         connectorColor: Colors.blue.shade400,
-        gradient: LinearGradient(colors: [
-          Colors.blue.shade900,
-          Colors.blue.shade400,
-        ])
+        gradient: LinearGradient(
+          colors: [Colors.blue.shade900, Colors.blue.shade400],
+        ),
       ),
-      state: currentStep == 4 ? StepState.disabled : StepState.editing,
+      state: _currentStep == 4 ? StepState.disabled : StepState.complete,
     ),
   ];
 }
