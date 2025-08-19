@@ -28,7 +28,7 @@ class _StepThreeState extends State<StepThreeState> {
       crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Заключение договора на технологическое присоединение\n и/или технологический надзор',
+              'Заключение договора на технологическое присоединение и/или технологический надзор',
               style: TextStyle(
                 fontSize: 20,
               ),

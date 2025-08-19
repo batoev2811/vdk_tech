@@ -61,18 +61,27 @@ class _HomePageState extends State<HomePageState> {
           return Container(
             margin: EdgeInsets.only(top: 50),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: details.onStepContinue,
-                    child: Text('Далее'),
+                FloatingActionButton.extended(
+                  backgroundColor: Colors.blueAccent,
+                  onPressed: details.onStepContinue,
+                  label: Text(
+                    'Далее',
+                    style: TextStyle(
+                      color: Colors.white
+                    ),
                   ),
                 ),
                 SizedBox(width: 20),
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: details.onStepCancel,
-                    child: Text('Назад'),
+                FloatingActionButton.extended(
+                  backgroundColor: Colors.blueAccent,
+                  onPressed: details.onStepCancel,
+                  label: Text(
+                    'Назад',
+                    style: TextStyle(
+                      color: Colors.white
+                    ),
                   ),
                 ),
               ],
@@ -85,7 +94,8 @@ class _HomePageState extends State<HomePageState> {
 
   List<Step> getSteps() => [
     Step(
-      title: Text('Этап 1'),
+      title: Flexible(child: Text('Этап 1')),
+      subtitle: Flexible(child: Text('Запрос и выдача техусловий')),
       content: StepOne(),
       isActive: _currentStep >= 0,
       stepStyle: StepStyle(
@@ -98,7 +108,8 @@ class _HomePageState extends State<HomePageState> {
     ),
     Step(
       isActive: _currentStep >= 1,
-      title: Text('Этап 2'),
+      title: Flexible(child: Text('Этап 2')),
+      subtitle: Flexible(child: Text('Разработка и согласование \nрабочего проекта')),
       content: StepTwo(),
       stepStyle: StepStyle(
         connectorColor: Colors.blue.shade400,
@@ -110,7 +121,8 @@ class _HomePageState extends State<HomePageState> {
     ),
     Step(
       isActive: _currentStep >= 2,
-      title: Text('Этап 3'),
+      title: Flexible(child: Text('Этап 3')),
+      subtitle: Flexible(child: Text('Заключение договора на технологическое присоединение \nи/или технологический надзор')),
       content: StepThree(),
       stepStyle: StepStyle(
         connectorColor: Colors.blue.shade400,
@@ -122,7 +134,8 @@ class _HomePageState extends State<HomePageState> {
     ),
     Step(
       isActive: _currentStep >= 3,
-      title: Text('Этап 4'),
+      title: Flexible(child: Text('Этап 4')),
+      subtitle: Flexible(child: Text('Строительство сетей')),
       content: StepFour(),
       stepStyle: StepStyle(
         connectorColor: Colors.blue.shade400,
@@ -134,7 +147,8 @@ class _HomePageState extends State<HomePageState> {
     ),
     Step(
       isActive: _currentStep >= 4,
-      title: Text('Этап 5'),
+      title: Flexible(child: Text('Этап 5')),
+      subtitle: Flexible(child: Text('Сбор исполнительной документации. \nАкт о подключении. \nОткрытие лицевого счёта')),
       content: StepFive(),
       stepStyle: StepStyle(
         connectorColor: Colors.blue.shade400,
@@ -142,7 +156,7 @@ class _HomePageState extends State<HomePageState> {
           colors: [Colors.blue.shade900, Colors.blue.shade400],
         ),
       ),
-      state: _currentStep == 4 ? StepState.disabled : StepState.complete,
+      state: _currentStep <= 4 ? StepState.disabled : StepState.complete,
     ),
   ];
 }

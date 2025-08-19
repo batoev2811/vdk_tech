@@ -17,7 +17,7 @@ class GradientAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final fontSize = screenWidth * 0.0256;
+    final fontSize = screenWidth * 0.02;
     final letterSpacing = screenWidth * 0.003;
 
     return Container(
@@ -46,6 +46,5 @@ class GradientAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => Size.fromHeight(_prefferedHeight);
 }

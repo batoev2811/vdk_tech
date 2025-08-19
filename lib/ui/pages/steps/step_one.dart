@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:vdk_tech/ui/widgets/dropzone_widget.dart';
+import 'package:vdk_tech/ui/widgets/format_file.dart';
 
-class StepOne extends StatelessWidget{
+class StepOne extends StatelessWidget {
   const StepOne({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: StepOneState(),
-    );
+    return Material(child: StepOneState());
   }
 }
 
@@ -19,7 +18,6 @@ class StepOneState extends StatefulWidget {
   State<StatefulWidget> createState() {
     return _StepOneState();
   }
-  
 }
 
 class _StepOneState extends State<StepOneState> {
@@ -28,25 +26,18 @@ class _StepOneState extends State<StepOneState> {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Запрос и выдача техусловий',
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.w300
-                ),
-              ),
-              SizedBox(height: 30,),
-              Row(
-                children: [
-                  Container(
-                  )
-                ],
-              ),
-            ],
+        children: [
+          Text(
+            'Для получения технического условия, загрузите все необходимые документы и нажмите кнопку \'Далее\'',
+            style: TextStyle(fontSize: 20),
+          ),
+          SizedBox(height: 10),
+          FormatFile(),
+          Text('Копия паспорта', style: TextStyle(fontSize: 18)),
+          SizedBox(height: 10),
+          DropzoneWidget(),
+        ],
       ),
     );
   }
-
-  
 }
