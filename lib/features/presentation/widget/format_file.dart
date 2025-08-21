@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vdk_tech/ui/widgets/dropzone_widget.dart';
+import 'package:vdk_tech/features/presentation/widget/dropzone_widget.dart';
 
 class FormatFile extends StatelessWidget {
   const FormatFile({super.key});

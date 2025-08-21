@@ -24,22 +24,11 @@ class StepFourState extends StatefulWidget {
 class _StepFourState extends State<StepFourState> {
   @override
   Widget build(Object context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Строительство сетей',
-              style: TextStyle(
-                fontSize: 20,
-              ),
-            ),
-            SizedBox(height: 30,),
-            Row(
-              children: [
-                Container()
-              ],
-            ),
-          ],
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        
+      ),
     );
   }
 

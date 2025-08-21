@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vdk_tech/ui/pages/home.dart';
+import 'package:vdk_tech/features/presentation/page/home.dart';
 
 void main() => runApp(
   MaterialApp(

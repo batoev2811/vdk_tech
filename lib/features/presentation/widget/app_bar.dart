@@ -29,7 +29,7 @@ class GradientAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       child: Row(
         children: [
-          Image(image: AssetImage('assets/images/logo.png')),
+          Image(image: AssetImage('lib/utils/images/logo.png')),
           SizedBox(width: 10),
           Text(
             'МУП Водоканал | Техприсоединение',

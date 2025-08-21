@@ -24,22 +24,18 @@ class StepFiveState extends StatefulWidget {
 class _StepFiveState extends State<StepFiveState> {
   @override
   Widget build(Object context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Сбор исполнительной документации. Акт о подключении. Открытие лицевого счёта',
-              style: TextStyle(
-                fontSize: 20,
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 30,),
+              Row(
+                children: [
+                  Container()
+                ],
               ),
-            ),
-            SizedBox(height: 30,),
-            Row(
-              children: [
-                Container()
-              ],
-            ),
-          ],
+            ],
+      ),
     );
   }
 

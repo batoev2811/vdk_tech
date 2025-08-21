@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:vdk_tech/ui/pages/steps/step_five.dart';
-import 'package:vdk_tech/ui/pages/steps/step_four.dart';
-import 'package:vdk_tech/ui/pages/steps/step_one.dart';
-import 'package:vdk_tech/ui/pages/steps/step_three.dart';
-import 'package:vdk_tech/ui/pages/steps/step_two.dart';
-import 'package:vdk_tech/ui/widgets/app_bar.dart';
+import 'package:vdk_tech/features/presentation/page/steps/step_five.dart';
+import 'package:vdk_tech/features/presentation/page/steps/step_four.dart';
+import 'package:vdk_tech/features/presentation/page/steps/step_one.dart';
+import 'package:vdk_tech/features/presentation/page/steps/step_three.dart';
+import 'package:vdk_tech/features/presentation/page/steps/step_two.dart';
+import 'package:vdk_tech/features/presentation/widget/app_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

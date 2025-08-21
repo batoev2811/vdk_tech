@@ -24,22 +24,18 @@ class StepThreeState extends StatefulWidget {
 class _StepThreeState extends State<StepThreeState> {
   @override
   Widget build(Object context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Заключение договора на технологическое присоединение и/или технологический надзор',
-              style: TextStyle(
-                fontSize: 20,
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 30,),
+              Row(
+                children: [
+                  Container()
+                ],
               ),
-            ),
-            SizedBox(height: 30,),
-            Row(
-              children: [
-                Container()
-              ],
-            ),
-          ],
+            ],
+      ),
     );
   }
 
