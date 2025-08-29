@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:vdk_tech/features/presentation/widget/dropzone_widget.dart';
 
 class FormatFile extends StatelessWidget {
   const FormatFile({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // ignore: avoid_unnecessary_containers
     return Container(
       child: Stack(
         children: [

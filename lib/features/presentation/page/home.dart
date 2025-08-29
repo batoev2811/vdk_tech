@@ -26,7 +26,7 @@ class HomePageState extends StatefulWidget {
 
 class _HomePageState extends State<HomePageState> {
   int _currentStep = 0;
-  int _totalSteps = 5;
+  final int _totalSteps = 5;
 
   @override
   Widget build(BuildContext context) {

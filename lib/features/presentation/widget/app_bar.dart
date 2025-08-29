@@ -6,13 +6,11 @@ class GradientAppBar extends StatelessWidget implements PreferredSizeWidget {
   String title;
   Color gradientBegin, gradientEnd;
 
-  GradientAppBar({
+  GradientAppBar({super.key, 
     required this.title,
     required this.gradientBegin,
     required this.gradientEnd,
-  }) : assert(title != null),
-       assert(gradientBegin != null),
-       assert(gradientEnd != null);
+  });
 
   @override
   Widget build(BuildContext context) {

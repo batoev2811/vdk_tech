@@ -1,9 +1,4 @@
-import 'dart:io';
-import 'dart:math';
-import 'dart:typed_data';
-
 import 'package:dotted_border/dotted_border.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dropzone/flutter_dropzone.dart';
 
@@ -18,7 +13,7 @@ class DropzoneWidget extends StatefulWidget {
 
 class _DropzoneWidget extends State<DropzoneWidget> {
   late DropzoneViewController controller;
-  String message = 'Перетащите файлы или нажмите для загрузк';
+  String message = 'Перетащите файлы или нажмите для загрузки';
   bool highlighted = false;
   Color color = Colors.transparent;
   bool isFileSelected = false;
@@ -34,6 +29,7 @@ class _DropzoneWidget extends State<DropzoneWidget> {
   @override
   Widget build(Object context) {
     return Container(
+      color: Colors.white,
         child: Container(
           height: 100,
           color: Colors.blue.shade200,
@@ -97,3 +93,4 @@ class _DropzoneWidget extends State<DropzoneWidget> {
     );
   }
 }
+

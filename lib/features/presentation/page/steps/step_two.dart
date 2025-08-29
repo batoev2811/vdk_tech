@@ -18,15 +18,50 @@ class StepTwoState extends StatefulWidget {
   }
 }
 
+List<String> rpoptions = ['Согласован', 'Не согласован'];
+
 class _StepTwoState extends State<StepTwoState> {
+  String currentRpOption = rpoptions[0];
+
   @override
   Widget build(Object context) {
     return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          
-        ],
+      child: Container(
+        color: Colors.white,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Ваш рабочий проект, ранее, был согласован?'),
+            Column(
+              children: [
+                ListTile(
+                  title: const Text('Согласован'),
+                  leading: Radio(
+                    value: rpoptions[0],
+                    groupValue: currentRpOption,
+                    onChanged: (value) {
+                      setState(() {
+                        currentRpOption = value.toString();
+                      });
+                    },
+                  ),
+                ),
+                ListTile(
+                  title: const Text('Не согласован'),
+                  leading: Radio(
+                    value: rpoptions[1],
+                    groupValue: currentRpOption,
+                    onChanged: (value) {
+                      setState(() {
+                        currentRpOption = value.toString();
+                      });
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
