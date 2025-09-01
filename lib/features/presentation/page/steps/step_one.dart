@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vdk_tech/features/presentation/widget/dropzone_widget.dart';
-import 'package:vdk_tech/features/presentation/widget/format_file.dart';
+import 'package:vdk_tech/features/presentation/widget/format_file_info.dart';
 
 class StepOne extends StatelessWidget {
   const StepOne({super.key});
