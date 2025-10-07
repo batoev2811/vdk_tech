@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:vdk_tech/features/presentation/widget/dropzone_widget.dart';
+import 'package:vdk_tech/features/presentation/widget/format_file_info.dart';
 
 class StepTwo extends StatelessWidget {
   const StepTwo({super.key});
@@ -26,57 +28,63 @@ class _StepTwoState extends State<StepTwoState> {
   @override
   Widget build(Object context) {
     return SingleChildScrollView(
-        child: Container(
-          color: Colors.white,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('Ваш рабочий проект, ранее, был согласован?'),
+          Column(
             children: [
-              Text('Ваш рабочий проект, ранее, был согласован?'),
-              Column(
-                children: [
-                  ListTile(
-                    title: const Text('Согласован'),
-                    leading: Radio(
-                      value: rpoptions[0],
-                      groupValue: currentRpOption,
-                      onChanged: (value) {
-                        setState(() {
-                          currentRpOption = value.toString();
-                        });
-                      },
-                    ),
-                  ),
-                  ListTile(
-                    title: const Text('Не согласован'),
-                    leading: Radio(
-                      value: rpoptions[1],
-                      groupValue: currentRpOption,
-                      onChanged: (value) {
-                        setState(() {
-                          currentRpOption = value.toString();
-                        });
-                      },
-                    ),
-                  ),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: WidgetStatePropertyAll(Colors.blueAccent),
-                      textStyle: WidgetStatePropertyAll(TextStyle(color: Colors.white))
-                    ),
-                    child: Text('Выбрать'),
-                    onPressed: (){
-                      if (currentRpOption == 'Согласован') {
-                        Navigator.pushNamed(this.context, '/');
-                      } else {
-                        Navigator.popAndPushNamed(this.context, '/steptwov2');
-                      }
-                    },
-                  )
-                ],
+              ListTile(
+                title: const Text('Согласован'),
+                leading: Radio(
+                  value: rpoptions[0],
+                  groupValue: currentRpOption,
+                  onChanged: (value) {
+                    setState(() {
+                      currentRpOption = value.toString();
+                    });
+                  },
+                ),
+              ),
+              ListTile(
+                title: const Text('Не согласован'),
+                leading: Radio(
+                  value: rpoptions[1],
+                  groupValue: currentRpOption,
+                  onChanged: (value) {
+                    setState(() {
+                      currentRpOption = value.toString();
+                    });
+                  },
+                ),
               ),
             ],
           ),
-        ),
+          SizedBox(height: 30.0),
+          Column(
+            children: [
+              Text(
+                'Для получения технического условия, загрузите все необходимые документы и нажмите кнопку \'Далее\'',
+                style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(height: 10),
+              FormatFile(),
+              Text('Загрузите заявление', style: TextStyle(fontSize: 18)),
+              SizedBox(height: 10),
+              DropzoneWidget(),
+              SizedBox(height: 10),
+              Text('Загрузите рабочий проект', style: TextStyle(fontSize: 18)),
+              SizedBox(height: 10),
+              DropzoneWidget(),
+              SizedBox(height: 10),
+              Text('Иные документы', style: TextStyle(fontSize: 18)),
+              SizedBox(height: 10),
+              DropzoneWidget(),
+              SizedBox(height: 10),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

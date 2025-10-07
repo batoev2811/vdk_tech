@@ -23,6 +23,9 @@ class StepOneState extends StatefulWidget {
 class _StepOneState extends State<StepOneState> {
   @override
   Widget build(Object context) {
+    bool isVisible = false;
+
+
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
