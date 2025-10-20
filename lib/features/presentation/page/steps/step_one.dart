@@ -46,6 +46,7 @@ class _StepOneState extends State<StepOneState> {
               )
             ),
             child: Column(
+              mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 5.0,

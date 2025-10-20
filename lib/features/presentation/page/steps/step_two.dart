@@ -30,6 +30,7 @@ class _StepTwoState extends State<StepTwoState> {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Text('Ваш рабочий проект, ранее, был согласован?'),
           Column(
@@ -62,6 +63,8 @@ class _StepTwoState extends State<StepTwoState> {
           ),
           SizedBox(height: 30.0),
           Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
                 'Для получения технического условия, загрузите все необходимые документы и нажмите кнопку \'Далее\'',
@@ -77,16 +80,17 @@ class _StepTwoState extends State<StepTwoState> {
                   border: BoxBorder.all(style: BorderStyle.solid),
                 ),
                 child: Column(
+                  mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   spacing: 5.0,
                   children: [
-                    Text('Загрузите заявление', style: TextStyle(fontSize: 18)),
+                    Text('Загрузите заявление', style: TextStyle(fontSize: 16)),
                     Text(
                       'Загрузите рабочий проект',
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(fontSize: 16),
                     ),
-                    Text('Иные документы', style: TextStyle(fontSize: 18)),
+                    Text('Иные документы', style: TextStyle(fontSize: 16)),
                   ],
                 ),
               ),
