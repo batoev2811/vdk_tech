@@ -47,7 +47,7 @@ class _StepThreeState extends State<StepThreeState> {
   Widget build(Object context) {
     return SingleChildScrollView(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,7 +56,7 @@ class _StepThreeState extends State<StepThreeState> {
                 'Для продолжение заполните заявление',
                 style: TextStyle(fontSize: 20),
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 10),
               Text(
                 '1. Наименование исполнителя, кому направлено заявление о подключении:',
                 style: TextStyle(fontSize: 18),
@@ -92,9 +92,7 @@ class _StepThreeState extends State<StepThreeState> {
                     '2. Сведения о заявителе:',
                     style: TextStyle(fontSize: 18),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
+                  SizedBox(height: 20),
                   Row(
                     children: [
                       SizedBox(
@@ -123,7 +121,7 @@ class _StepThreeState extends State<StepThreeState> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 10),
                   Row(
                     children: [
                       SizedBox(
@@ -151,14 +149,12 @@ class _StepThreeState extends State<StepThreeState> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 30,),
+                  SizedBox(height: 30),
                   Text(
                     '2.3 Паспортные данные:',
                     style: TextStyle(fontSize: 14),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
+                  SizedBox(height: 20),
                   Row(
                     children: [
                       SizedBox(
@@ -182,7 +178,7 @@ class _StepThreeState extends State<StepThreeState> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 30,),
+                      SizedBox(width: 30),
                       SizedBox(
                         width: 200,
                         height: 60,
@@ -197,8 +193,8 @@ class _StepThreeState extends State<StepThreeState> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 10,),
-                   Row(
+                  SizedBox(height: 10),
+                  Row(
                     children: [
                       SizedBox(
                         width: 150,
@@ -225,7 +221,7 @@ class _StepThreeState extends State<StepThreeState> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 10),
                   Row(
                     children: [
                       SizedBox(
@@ -248,16 +244,13 @@ class _StepThreeState extends State<StepThreeState> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 10),
                   Row(
                     children: [
                       SizedBox(
                         width: 150,
                         height: 40,
-                        child: Text(
-                          'ИНН:',
-                          style: TextStyle(fontSize: 14),
-                        ),
+                        child: Text('ИНН:', style: TextStyle(fontSize: 14)),
                       ),
                       SizedBox(width: 50.0),
                       SizedBox(
@@ -273,28 +266,128 @@ class _StepThreeState extends State<StepThreeState> {
                   ),
                 ],
               ),
+              SizedBox(height: 10),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 150,
+                    height: 40,
+                    child: Text('СНИЛС', style: TextStyle(fontSize: 14)),
+                  ),
+                  SizedBox(width: 50.0),
+                  SizedBox(
+                    width: 500,
+                    height: 40,
+                    child: TextField(
+                      decoration: InputDecoration(border: OutlineInputBorder()),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 30),
+              Text(
+                '3. Контактные данные заявителя:',
+                style: TextStyle(fontSize: 14),
+              ),
+              SizedBox(height: 30),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 150,
+                    height: 40,
+                    child: Text('3.1. Адрес регистрации:', style: TextStyle(fontSize: 14)),
+                  ),
+                  SizedBox(width: 50.0),
+                  SizedBox(
+                    width: 500,
+                    height: 40,
+                    child: TextField(
+                      decoration: InputDecoration(border: OutlineInputBorder()),
+                    ),
+                  ),
+                ],
+              ),
               SizedBox(height: 10,),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 150,
-                        height: 40,
-                        child: Text(
-                          'СНИЛС',
-                          style: TextStyle(fontSize: 14),
-                        ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 150,
+                    height: 40,
+                    child: Text('3.2. Почтовый адрес:', style: TextStyle(fontSize: 14)),
+                  ),
+                  SizedBox(width: 50.0),
+                  SizedBox(
+                    width: 500,
+                    height: 40,
+                    child: TextField(
+                      decoration: InputDecoration(border: OutlineInputBorder()),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10,),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 150,
+                    height: 40,
+                    child: Text('3.3 Контактный номер телефона:', style: TextStyle(fontSize: 14)),
+                  ),
+                  SizedBox(width: 50.0),
+                  SizedBox(
+                    width: 500,
+                    height: 40,
+                    child: TextField(
+                      keyboardType: TextInputType.phone,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
                       ),
-                      SizedBox(width: 50.0),
-                      SizedBox(
-                        width: 500,
-                        height: 40,
-                        child: TextField(
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                          ),
-                        ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10,),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 150,
+                    height: 40,
+                    child: Text('3.4 Электронная почта:', style: TextStyle(fontSize: 14)),
+                  ),
+                  SizedBox(width: 50.0),
+                  SizedBox(
+                    width: 500,
+                    height: 40,
+                    child: TextField(
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
                       ),
-                    ],
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 30,),
+              Text(
+                '4. Основания обращения с заявлением о подключении (технологическом присоединении)',
+                style: TextStyle(fontSize: 14),
+              ),
+              SizedBox(height: 10),
+              Text(
+                '(указание, кем именно из перечня лиц, имеющих право обратиться с заявлением о подключении, является указанное лицо, а\n'
+                'для правообладателя земельного участка также информация о праве лица на земельный участок, на который расположен\n'
+                'подключаемый объект основания возникновения такого права)',
+                style: TextStyle(fontSize: 14),
+              ),
+              SizedBox(
+                    width: 800,
+                    height: 400,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.only(left: 20, bottom: 200),
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
                   ),
             ],
           ),
