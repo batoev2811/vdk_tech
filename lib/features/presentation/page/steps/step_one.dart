@@ -24,9 +24,10 @@ class _StepOneState extends State<StepOneState> {
   @override
   Widget build(Object context) {
     bool isVisible = false;
+    String? _selectedPersonRole = 'Физическое лицо';
+    List<String> _personRole = ['Физическое лицо','Физичекое лицо (ИП)', 'Юридическое лицо'];
 
-
-    return SingleChildScrollView(
+    /*return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -84,6 +85,26 @@ class _StepOneState extends State<StepOneState> {
           SizedBox(height: 10),
           DropzoneWidget(),
         ],
+      ),
+    );*/
+    return SingleChildScrollView(
+      child: Container(
+        child: DropdownButton<String>(
+          value: _selectedPersonRole, 
+          onChanged: (String? newValue) {
+            setState(() {
+              _selectedPersonRole = newValue;
+            });
+          },
+          items: _personRole.map<DropdownMenuItem<String>>((String value) {
+            return DropdownMenuItem<String>(
+              value: value,
+              child: Container(
+                
+              ),
+            );
+          }).toList(),
+        ),
       ),
     );
   }
