@@ -2,32 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:vdk_tech/features/presentation/widget/dropzone_widget.dart';
 import 'package:vdk_tech/features/presentation/widget/format_file_info.dart';
 
-class StepOne extends StatelessWidget {
-  const StepOne({super.key});
+class SteponeFizlicaip extends StatelessWidget{
+  const SteponeFizlicaip({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Material(child: StepOneState());
+    return Material(child: SteponeFizlicaipState(),);
   }
 }
 
-class StepOneState extends StatefulWidget {
-  const StepOneState({super.key});
+class SteponeFizlicaipState extends StatefulWidget {
+  const SteponeFizlicaipState({super.key});
 
   @override
   State<StatefulWidget> createState() {
-    return _StepOneState();
+    return _SteponeFizliczip();
   }
 }
 
-class _StepOneState extends State<StepOneState> {
-  @override
-  Widget build(Object context) {
-    bool isVisible = false;
-    String? _selectedPersonRole = 'Физическое лицо';
-    List<String> _personRole = ['Физическое лицо','Физичекое лицо (ИП)', 'Юридическое лицо'];
 
-    /*return SingleChildScrollView(
+class _SteponeFizliczip extends State<SteponeFizlicaipState> {
+  
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -85,11 +84,6 @@ class _StepOneState extends State<StepOneState> {
           SizedBox(height: 10),
           DropzoneWidget(),
         ],
-      ),
-    );*/
-    return SingleChildScrollView(
-      child: Column(
-        
       ),
     );
   }
