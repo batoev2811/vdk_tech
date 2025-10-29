@@ -32,36 +32,6 @@ class _StepTwoState extends State<StepTwoState> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Text('Ваш рабочий проект, ранее, был согласован?'),
-          Column(
-            children: [
-              ListTile(
-                title: const Text('Согласован'),
-                leading: Radio(
-                  value: rpoptions[0],
-                  groupValue: currentRpOption,
-                  onChanged: (value) {
-                    setState(() {
-                      currentRpOption = value.toString();
-                    });
-                  },
-                ),
-              ),
-              ListTile(
-                title: const Text('Не согласован'),
-                leading: Radio(
-                  value: rpoptions[1],
-                  groupValue: currentRpOption,
-                  onChanged: (value) {
-                    setState(() {
-                      currentRpOption = value.toString();
-                    });
-                  },
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 30.0),
           Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,

@@ -39,56 +39,59 @@ class _HomePageState extends State<HomePageState> {
         gradientBegin: Colors.blue.shade900,
         gradientEnd: Colors.blue.shade500,
       ),
-      body: Stepper(
-        type: isSmallScreen ? StepperType.vertical : StepperType.horizontal,
-        steps: getSteps(),
-        currentStep: _currentStep,
-        onStepContinue: () {
-          if (_currentStep < _totalSteps - 1) {
-            setState(() {
-              _currentStep++;
-            });
-          }
-        },
-        onStepCancel: () {
-          if (_currentStep > 0) {
-            setState(() {
-              _currentStep--;
-            });
-          }
-        },
-        controlsBuilder: (context, details) {
-          return Container(
-            margin: EdgeInsets.only(top: 50),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                FloatingActionButton.extended(
-                  backgroundColor: Colors.blueAccent,
-                  onPressed: details.onStepContinue,
-                  label: Text(
-                    'Далее',
-                    style: TextStyle(
-                      color: Colors.white
+      body: Stack(
+        children: [
+          Stepper(
+          type: isSmallScreen ? StepperType.vertical : StepperType.horizontal,
+          steps: getSteps(),
+          currentStep: _currentStep,
+          onStepContinue: () {
+            if (_currentStep < _totalSteps - 1) {
+              setState(() {
+                _currentStep++;
+              });
+            }
+          },
+          onStepCancel: () {
+            if (_currentStep > 0) {
+              setState(() {
+                _currentStep--;
+              });
+            }
+          },
+          controlsBuilder: (context, details) {
+            return Container(
+              margin: EdgeInsets.only(top: 50),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  FloatingActionButton.extended(
+                    backgroundColor: Colors.blueAccent,
+                    onPressed: details.onStepContinue,
+                    label: Text(
+                      'Далее',
+                      style: TextStyle(
+                        color: Colors.white
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(width: 20),
-                FloatingActionButton.extended(
-                  backgroundColor: Colors.blueAccent,
-                  onPressed: details.onStepCancel,
-                  label: Text(
-                    'Назад',
-                    style: TextStyle(
-                      color: Colors.white
+                  SizedBox(width: 20),
+                  FloatingActionButton.extended(
+                    backgroundColor: Colors.blueAccent,
+                    onPressed: details.onStepCancel,
+                    label: Text(
+                      'Назад',
+                      style: TextStyle(
+                        color: Colors.white
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-          );
-        },
-      ),
+                ],
+              ),
+            );
+          },
+        ),
+      ]),
     );
   }
 

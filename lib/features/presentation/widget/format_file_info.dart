@@ -22,7 +22,7 @@ class FormatFile extends StatelessWidget {
                   SizedBox(width: 10),
                   Flexible(
                     child: Text(
-                      'Внимание! Требования к прикрепляемым документам: Размер файла не более 30 Мб, '
+                      'Внимание! Требования к прикрепляемым документам: Размер одного файла не более 30 Мб, '
                       'длина имени не более 100 символов. Допустимые форматы: jpg, jpeg, png, pdf, tiff, doc, docx, rtf, sig, odt, rar, zip, 7z.',
                       style: TextStyle(fontSize: 14, color: Colors.blue.shade800),
                     ),
