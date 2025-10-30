@@ -37,7 +37,7 @@ class _StepTwoState extends State<StepTwoState> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
-                'Для получения технического условия, загрузите все необходимые документы и нажмите кнопку \'Далее\'',
+                'Для заключения договора загрузите на платформу рабочий проект (рабочую документацию) и нажмите кнопку \'отправить на согласование\'',
                 style: TextStyle(fontSize: 20),
               ),
               SizedBox(height: 10),
@@ -55,12 +55,11 @@ class _StepTwoState extends State<StepTwoState> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   spacing: 5.0,
                   children: [
-                    Text('Загрузите заявление', style: TextStyle(fontSize: 16)),
-                    Text(
-                      'Загрузите рабочий проект',
-                      style: TextStyle(fontSize: 16),
+                    Row(
+                      children: [
+                        
+                      ],
                     ),
-                    Text('Иные документы', style: TextStyle(fontSize: 16)),
                   ],
                 ),
               ),

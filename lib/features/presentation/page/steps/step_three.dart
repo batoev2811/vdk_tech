@@ -22,7 +22,7 @@ List<String> rpoptions = ['МУП "Водоканал"', 'Частная под�
 
 class _StepThreeState extends State<StepThreeState> {
   String currentRpOption = rpoptions[0];
-  TextEditingController _dateController = TextEditingController();
+  final TextEditingController _dateController = TextEditingController();
   DateTime? _selectedDate;
 
   Future<void> _selectDate(BuildContext context) async {
