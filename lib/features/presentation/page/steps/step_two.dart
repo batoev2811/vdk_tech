@@ -20,52 +20,52 @@ class StepTwoState extends StatefulWidget {
   }
 }
 
-List<String> rpoptions = ['Согласован', 'Не согласован'];
 
 class _StepTwoState extends State<StepTwoState> {
-  String currentRpOption = rpoptions[0];
 
   @override
   Widget build(Object context) {
     return SingleChildScrollView(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Column(
             mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Для заключения договора загрузите на платформу рабочий проект (рабочую документацию) и нажмите кнопку \'отправить на согласование\'',
+                'Если ранее рабочий проект (рабочая документация) был согласован (обращались ранее, на руках)'
+                'то загрузите проект на платформу и нажмите кнопку \'отправить на проверку\''
+                '\nЕсли рабочий проект ранее не согласовывали, то загрузите на платформу \'рабочий проект\''
+                ' и \'заявление на согласование рабочей документации\' и нажмите кнопку \'отправить на согласование\'',
                 style: TextStyle(fontSize: 20),
               ),
               SizedBox(height: 10),
               FormatFile(),
               SizedBox(height: 10),
-              Container(
-                padding: EdgeInsets.only(left: 10.0),
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade400,
-                  border: BoxBorder.all(style: BorderStyle.solid),
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  spacing: 5.0,
+              SizedBox(height: 10),
+              DropzoneWidget(),
+              SizedBox(height: 10),
+              Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Row(
-                      children: [
+                    ElevatedButton(
+                      style: ButtonStyle(
                         
-                      ],
+                      ),
+                      onPressed: () {},
+                      child: Text('Отправить на проверку'),
+                    ),
+                    SizedBox(width: 10),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Text('Отправить на согласование'),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 10),
-              DropzoneWidget(),
-              SizedBox(height: 10),
             ],
           ),
         ],
