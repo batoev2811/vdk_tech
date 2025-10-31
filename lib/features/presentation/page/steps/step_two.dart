@@ -54,7 +54,8 @@ class _StepTwoState extends State<StepTwoState> {
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blueAccent,
-                        foregroundColor: Colors.white
+                        foregroundColor: Colors.white,
+                        elevation: 4,
                       ),
                       onPressed: () {},
                       child: Text('Отправить на проверку'),
@@ -63,7 +64,8 @@ class _StepTwoState extends State<StepTwoState> {
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blueAccent,
-                        foregroundColor: Colors.white
+                        foregroundColor: Colors.white,
+                        elevation: 4,
                       ),
                       onPressed: () {},
                       child: Text('Отправить на согласование'),
