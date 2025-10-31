@@ -52,14 +52,19 @@ class _StepTwoState extends State<StepTwoState> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
-                      style: ButtonStyle(
-                        
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blueAccent,
+                        foregroundColor: Colors.white
                       ),
                       onPressed: () {},
                       child: Text('Отправить на проверку'),
                     ),
                     SizedBox(width: 10),
                     ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blueAccent,
+                        foregroundColor: Colors.white
+                      ),
                       onPressed: () {},
                       child: Text('Отправить на согласование'),
                     ),
