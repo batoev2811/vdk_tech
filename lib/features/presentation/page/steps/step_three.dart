@@ -41,6 +41,7 @@ class _StepThreeState extends State<StepThreeState> {
                 '\nи договор с МУП Водоканал на осуществление технического надзора (контроля).',
                 style: TextStyle(fontSize: 18),
               ),
+              SizedBox(height: 10),
             ],
           ),
         ],
