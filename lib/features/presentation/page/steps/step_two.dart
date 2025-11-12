@@ -20,30 +20,44 @@ class StepTwoState extends StatefulWidget {
   }
 }
 
-
 class _StepTwoState extends State<StepTwoState> {
-
   @override
   Widget build(Object context) {
     return SingleChildScrollView(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Column(
             mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
-                'Если ранее рабочий проект (рабочая документация) был согласован (обращались ранее, на руках)'
-                'то загрузите проект на платформу и нажмите кнопку \'отправить на проверку\''
-                '\nЕсли рабочий проект ранее не согласовывали, то загрузите на платформу \'рабочий проект\''
-                ' и \'заявление на согласование рабочей документации\' и нажмите кнопку \'отправить на согласование\'',
-                style: TextStyle(fontSize: 20),
+                'Загрузите рабочий проект на платформу',
+                style: TextStyle(fontSize: 18),
+              ),
+              SizedBox(height: 10.0,),
+              Container(
+                alignment: Alignment.topLeft,
+                padding: EdgeInsets.only(left: 10.0),
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade400,
+                  border: BoxBorder.all(style: BorderStyle.solid),
+                ),
+                child: Column(
+                  children: [
+                    Text(
+                  'Если ранее рабочий проект (рабочая документация) был согласован (обращались ранее, на руках)'
+                  'то загрузите проект на платформу и нажмите кнопку \'отправить на проверку\''
+                  '\nЕсли рабочий проект ранее не согласовывали, то загрузите на платформу \'рабочий проект\''
+                  ' и \'заявление на согласование рабочей документации\' и нажмите кнопку \'отправить на согласование\'',
+                  style: TextStyle(fontSize: 14),
+                ),
+                  ],
+                )
               ),
               SizedBox(height: 10),
               FormatFile(),
-              SizedBox(height: 10),
               SizedBox(height: 10),
               DropzoneWidget(),
               SizedBox(height: 10),

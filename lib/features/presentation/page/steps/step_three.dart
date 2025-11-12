@@ -19,7 +19,6 @@ class StepThreeState extends StatefulWidget {
 }
 
 class _StepThreeState extends State<StepThreeState> {
-
   @override
   Widget build(Object context) {
     return SingleChildScrollView(
@@ -31,10 +30,32 @@ class _StepThreeState extends State<StepThreeState> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
-                'Для заключения договора загрузите ',
+                'Для заключения договора загрузите необходимые документы и нажмиите на кнопку отправить на проверку.',
                 style: TextStyle(fontSize: 18),
               ),
               SizedBox(height: 10),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Container(
+                      padding: EdgeInsets.only(left: 10.0),
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade400,
+                        border: BoxBorder.all(style: BorderStyle.solid),
+                      ),
+                      child: Column(
+                        children: [
+                          Text(
+                            '',
+                            style: TextStyle(fontSize: 14.0),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ],
