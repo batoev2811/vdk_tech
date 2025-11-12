@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vdk_tech/features/presentation/widget/dropzone_widget.dart';
 
 class StepThree extends StatelessWidget {
   const StepThree({super.key});
@@ -37,8 +38,7 @@ class _StepThreeState extends State<StepThreeState> {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Expanded(
-                    child: Container(
+                  Container(
                       padding: EdgeInsets.only(left: 10.0),
                       decoration: BoxDecoration(
                         color: Colors.grey.shade400,
@@ -47,15 +47,18 @@ class _StepThreeState extends State<StepThreeState> {
                       child: Column(
                         children: [
                           Text(
-                            '',
+                            'Если договор подписан с МУП Водоканал (обращались ранее, на руках), то загрузите договор на строительство сетей и отправьте на проверку;\n'
+                            'Если ранее договор не был подписан, в зависимости от подрядчика строительства сетей, загрузите договор с МУП Водоканал или с частной подрядной организацией '
+                            'на платформу и нажмите кнопку подписать и отправить;',
                             style: TextStyle(fontSize: 14.0),
                           ),
                         ],
                       ),
                     ),
-                  ),
                 ],
               ),
+              SizedBox(height: 10,),
+              DropzoneWidget(),
             ],
           ),
         ],
