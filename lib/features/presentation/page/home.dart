@@ -138,7 +138,7 @@ class _HomePageState extends State<HomePageState> {
     Step(
       isActive: _currentStep >= 3,
       title: Flexible(child: Text('Этап 4')),
-      subtitle: Flexible(child: Text('Строительство сетей')),
+      subtitle: Flexible(child: Text('Строительство сетей через МУП Водоканал')),
       content: StepFour(),
       stepStyle: StepStyle(
         connectorColor: Colors.blue.shade400,
