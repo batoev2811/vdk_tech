@@ -25,69 +25,106 @@ class _StepTwoState extends State<StepTwoState> {
   Widget build(Object context) {
     return SingleChildScrollView(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.start,
+          Text(
+            'Загрузите рабочий проект на платформу',
+            style: TextStyle(fontSize: 18),
+          ),
+          Row(
             children: [
-              Text(
-                'Загрузите рабочий проект на платформу',
-                style: TextStyle(fontSize: 18),
-              ),
-              SizedBox(height: 10.0,),
-              Container(
-                alignment: Alignment.topLeft,
-                padding: EdgeInsets.only(left: 10.0),
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade400,
-                  border: BoxBorder.all(style: BorderStyle.solid),
-                  borderRadius: BorderRadius.circular(8),
-                ),
+              Expanded(
                 child: Column(
                   children: [
-                    Text(
-                  'Если ранее рабочий проект (рабочая документация) был согласован (обращались ранее, на руках)'
-                  'то загрузите проект на платформу и нажмите кнопку \'отправить на проверку\''
-                  '\nЕсли рабочий проект ранее не согласовывали, то загрузите на платформу \'рабочий проект\''
-                  ' и \'заявление на согласование рабочей документации\' и нажмите кнопку \'отправить на согласование\'',
-                  style: TextStyle(fontSize: 14),
-                ),
+                    Container(
+                      alignment: Alignment.topLeft,
+                      padding: EdgeInsets.all(10.0),
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade400,
+                        border: BoxBorder.all(style: BorderStyle.solid),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Column(
+                        children: [
+                          Text(
+                            'Если ранее рабочий проект (рабочая документация) был согласован (обращались ранее, на руках)'
+                            'то загрузите проект на платформу и нажмите кнопку \'отправить на проверку\'',
+                            style: TextStyle(fontSize: 14),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
-                )
+                ),
               ),
-              SizedBox(height: 10),
-              FormatFile(),
-              SizedBox(height: 10),
-              DropzoneWidget(),
-              SizedBox(height: 10),
-              Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+              SizedBox(width: 10),
+              Expanded(
+                child: Column(
                   children: [
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blueAccent,
-                        foregroundColor: Colors.white,
-                        elevation: 4,
+                    Container(
+                      alignment: Alignment.topLeft,
+                      padding: EdgeInsets.all(10.0),
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade400,
+                        border: BoxBorder.all(style: BorderStyle.solid),
+                        borderRadius: BorderRadius.circular(8),
                       ),
-                      onPressed: () {},
-                      child: Text('Отправить на проверку'),
-                    ),
-                    SizedBox(width: 10),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blueAccent,
-                        foregroundColor: Colors.white,
-                        elevation: 4,
+                      child: Column(
+                        children: [
+                          Text(
+                            'Если рабочий проект ранее не согласовывали, то загрузите на платформу \'рабочий проект\''
+                            ' и \'заявление на согласование рабочей документации\' и нажмите кнопку \'отправить на согласование\'',
+                            style: TextStyle(fontSize: 14),
+                          ),
+                        ],
                       ),
-                      onPressed: () {},
-                      child: Text('Отправить на согласование'),
                     ),
                   ],
                 ),
               ),
+            ],
+          ),
+          SizedBox( height: 10,),
+          FormatFile(),
+          SizedBox(height: 10,),
+          Row(
+            children: [
+              Expanded(child: Column(
+                children: [
+                  DropzoneWidget(),
+                    SizedBox(height: 10),
+                    Center(
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blueAccent,
+                          foregroundColor: Colors.white,
+                          elevation: 4,
+                        ),
+                        onPressed: () {},
+                        child: Text('Отправить на согласование'),
+                      ),
+                    ),
+                ],
+              )),
+              SizedBox(width: 10,),
+              Expanded(child: Column(
+                children: [
+                  DropzoneWidget(),
+                    SizedBox(height: 10),
+                    Center(
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blueAccent,
+                          foregroundColor: Colors.white,
+                          elevation: 4,
+                        ),
+                        onPressed: () {},
+                        child: Text('Отправить на проверку'),
+                      ),
+                    ),
+                ],
+              )),
             ],
           ),
         ],
