@@ -42,6 +42,7 @@ class _StepOneState extends State<StepOneState> {
                   decoration: BoxDecoration(
                     color: Colors.grey.shade400,
                     border: BoxBorder.all(style: BorderStyle.solid),
+                    borderRadius: BorderRadius.circular(8),
                   ),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -77,6 +78,7 @@ class _StepOneState extends State<StepOneState> {
                   decoration: BoxDecoration(
                     color: Colors.grey.shade400,
                     border: BoxBorder.all(style: BorderStyle.solid),
+                    borderRadius: BorderRadius.circular(8),
                   ),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -111,6 +113,7 @@ class _StepOneState extends State<StepOneState> {
                   decoration: BoxDecoration(
                     color: Colors.grey.shade400,
                     border: BoxBorder.all(style: BorderStyle.solid),
+                    borderRadius: BorderRadius.circular(8),
                   ),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,

@@ -43,6 +43,7 @@ class _StepTwoState extends State<StepTwoState> {
                 decoration: BoxDecoration(
                   color: Colors.grey.shade400,
                   border: BoxBorder.all(style: BorderStyle.solid),
+                  borderRadius: BorderRadius.circular(8),
                 ),
                 child: Column(
                   children: [

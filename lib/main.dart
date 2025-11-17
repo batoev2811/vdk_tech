@@ -9,6 +9,7 @@ import 'package:vdk_tech/features/presentation/page/steps/step_two.dart';
 void main() => runApp(
   MaterialApp(
     debugShowCheckedModeBanner: false,
+    // initialRoute: '/',
     initialRoute: '/',
     routes: {
       '/': (contex) => const HomePage(),

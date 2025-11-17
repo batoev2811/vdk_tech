@@ -24,11 +24,11 @@ class _StepThreeState extends State<StepThreeState> {
   Widget build(Object context) {
     return SingleChildScrollView(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 'Для заключения договора загрузите необходимые документы и нажмиите на кнопку отправить на проверку.',
@@ -43,12 +43,13 @@ class _StepThreeState extends State<StepThreeState> {
                       decoration: BoxDecoration(
                         color: Colors.grey.shade400,
                         border: BoxBorder.all(style: BorderStyle.solid),
+                        borderRadius: BorderRadius.circular(8),
                       ),
                       child: Column(
                         children: [
                           Text(
-                            'Если договор подписан с МУП Водоканал (обращались ранее, на руках), то загрузите договор на строительство сетей и отправьте на проверку;\n'
-                            'Если ранее договор не был подписан, в зависимости от подрядчика строительства сетей, загрузите договор с МУП Водоканал или с частной подрядной организацией '
+                            '- Если договор подписан с МУП Водоканал (обращались ранее, на руках), то загрузите договор на строительство сетей и отправьте на проверку;\n'
+                            '- Если ранее договор не был подписан, в зависимости от подрядчика строительства сетей, загрузите договор с МУП Водоканал или с частной подрядной организацией '
                             'на платформу и нажмите кнопку подписать и отправить;',
                             style: TextStyle(fontSize: 14.0),
                           ),
@@ -59,6 +60,33 @@ class _StepThreeState extends State<StepThreeState> {
               ),
               SizedBox(height: 10,),
               DropzoneWidget(),
+              SizedBox(height: 10,),
+              Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blueAccent,
+                        foregroundColor: Colors.white,
+                        elevation: 4,
+                      ),
+                      onPressed: () {},
+                      child: Text('Отправить на проверку'),
+                    ),
+                    SizedBox(width: 10),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blueAccent,
+                        foregroundColor: Colors.white,
+                        elevation: 4,
+                      ),
+                      onPressed: () {},
+                      child: Text('Отправить на согласование'),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ],
